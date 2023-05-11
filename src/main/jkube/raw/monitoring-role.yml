@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  namespace: default
+  name: service-monitoring
+rules:
+  - apiGroups: [""] # "" indicates the core API group
+    resources: ["pods", "services", "endpoints"]
+    verbs: ["get", "watch", "list"]
